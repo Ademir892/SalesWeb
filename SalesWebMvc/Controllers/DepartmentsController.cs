@@ -99,14 +99,12 @@ namespace SalesWebMvc.Controllers
                 {
                     _context.Update(department);
                     await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
+                } catch (DbUpdateConcurrencyException)
                 {
                     if (!DepartmentExists(department.Id))
                     {
                         return NotFound();
-                    }
-                    else
+                    } else
                     {
                         throw;
                     }
